@@ -1,0 +1,7 @@
+
+== Language Help
+Below are links for each of the languages to assist in learning.
+
+include::header.adoc[]
+include::body.adoc[]
+include::footer.adoc[]

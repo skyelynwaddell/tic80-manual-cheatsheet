@@ -1,0 +1,9 @@
+Resolution|240x136 pixel display
+Color|16 color palette (chosen from 24-bit colorspace)
+Input|4 gamepads with 8 buttons / mouse / keyboard
+Sprites|256 foreground sprites and 256 background tiles (8x8 pixel)
+Map|240x136 tiles (ie, 1920x1088 pixels)
+Sound|4 channels (with editable waveform envelopes)
+Code|512KB of source or 256KB compiled BINARY size
+Memory|Up to 272kb of RAM (including 32KB of VRAM)
+Bankswitching|Up to 8 banks in cart (PRO version only)

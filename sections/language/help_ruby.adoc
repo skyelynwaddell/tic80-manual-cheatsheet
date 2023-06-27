@@ -1,0 +1,17 @@
+++++
+<div id="ruby-help" class="tabcontent">
+++++
+
+image::https://mruby.org/assets/images/mruby_logo_red_icon.png[alt=Logo,width=64,height=64,align="center"]
+
+Website at <https://mruby.org/>
+
+mruby is the lightweight implementation of the https://www.ruby-lang.org/en/[Ruby] language complying with part of the http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=59579[ISO standard].
+
+Ruby is a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.
+
+In Ruby, everything is an object. Every bit of information and code can be given their own properties and actions. Object-oriented programming calls properties by the name instance variables and actions are known as methods.
+
+++++
+</div>
+++++

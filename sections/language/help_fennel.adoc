@@ -1,0 +1,31 @@
+++++
+<div id="fennel-help" class="tabcontent">
+++++
+
+image::https://fennel-lang.org/logo.svg[alt=Logo,width=64,height=64,align="center"]
+
+Website at <https://fennel-lang.org/>
+
+Fennel is a programming language that brings together the speed, simplicity, and reach of https://www.lua.org/[Lua] with the flexibility of a https://en.wikipedia.org/wiki/Lisp_(programming_language)[lisp syntax and macro system].
+
+ * *Full Lua compatibility*: Easily call any Lua function or library from Fennel and vice-versa.
+ * *Zero overhead*: Compiled code should be just as efficient as hand-written Lua.
+ * *Compile-time macros*: Ship compiled code with no runtime dependency on Fennel.
+ * *Embeddable*: Fennel is a one-file library as well as an executable. Embed it in other programs to support runtime extensibility and interactive development.
+
+Anywhere you can run Lua code, you can run Fennel code.
+
+[square,options="compact"]
+ * The https://fennel-lang.org/tutorial[Tutorial] teaches you the basics of the language.
+ * The https://fennel-lang.org/rationale[Rationale] explains the reasoning why Fennel was created.
+ * The https://fennel-lang.org/lua-primer[Lua primer] will catch you up if you don't already know Lua.
+ * The https://fennel-lang.org/reference[Reference] lists out all built-in special forms and what they're for.
+ * The https://fennel-lang.org/style[Style Guide] advises on how to write clear and consise code.
+ * The https://fennel-lang.org/macros[Macro Guide] explains how to write macros.
+ * Curious about how a piece of code compiles? https://fennel-lang.org/see[See for yourself] with a side-by-side view how Fennel turns into Lua and vice-versa with Antifennel
+ * \#fennel channel on https://libera.chat/[Libera.Chat] and on https://matrix.to/#/!rnpLWzzTijEUDhhtjW:matrix.org[Matrix]. This is where the developers for Fennel hang out.
+ * Community https://fennel-lang.org/events[events]
+
+++++
+</div>
+++++

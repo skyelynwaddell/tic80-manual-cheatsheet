@@ -1,0 +1,7 @@
+= Tic-80 Cheat Sheet
+parlortricks <parlortricks@fastmail.fm>
+0.1, {docdate}: First steps to a cheat sheet.
+:toc: left
+:stylesheet: clean.css
+:stylesdir: styles
+:favicon: ./images/tic80.png

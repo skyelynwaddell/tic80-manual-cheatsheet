@@ -1,0 +1,9 @@
+
+== Links
+
+[%autowidth]
+[.gridview]
+[format=csv,separator="|",stripes=even]
+|===
+include::links.psv[]
+|===

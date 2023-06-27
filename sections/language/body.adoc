@@ -1,0 +1,7 @@
+include::help_lua.adoc[]
+include::help_moonscript.adoc[]
+include::help_javascript.adoc[]
+include::help_wren.adoc[]
+include::help_fennel.adoc[]
+include::help_squirrel.adoc[]
+include::help_ruby.adoc[]

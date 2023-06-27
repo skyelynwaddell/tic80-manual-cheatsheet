@@ -1,0 +1,10 @@
+== Specifications
+Current version of Tic-80 is `+1.0.2164+`
+
+.Specs
+[%autowidth]
+[.gridview]
+[format=csv,separator="|",stripes=even,cols="<s,<m"]
+|===
+include::tic80_specs.psv[]
+|===

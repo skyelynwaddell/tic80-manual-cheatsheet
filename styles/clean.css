@@ -1,0 +1,132 @@
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+
+@import url("//fonts.googleapis.com/css?family=Noto+Sans:300,600italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700");
+@import url("https://cdn.jsdelivr.net/gh/asciidoctor/asciidoctor@2.0/data/stylesheets/asciidoctor-default.css"); /* Default asciidoc style framework - important */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css");
+
+
+/* CUSTOMISATIONS */
+/* Change the values in root for quick customisation. If you want even more fine grain... venture further. */
+
+:root{
+--maincolor:#FFFFFF;
+--primarycolor:#2c3e50;
+--secondarycolor:#ba3925;
+--tertiarycolor: #186d7a;
+--sidebarbackground:#CCC;
+--linkcolor:#b71c1c;
+--linkcoloralternate:#f44336;
+--white:#FFFFFF;
+--black:#000000;
+}
+
+/* Text styles */
+h1{color:var(--primarycolor) !important;}
+h2,h3,h4,h5,h6{color:var(--secondarycolor) !important;}
+.title{color:var(--tertiarycolor) !important; font-family:"Noto Sans",sans-serif !important;font-style: normal !important; font-weight: normal !important;}
+p{font-family: "Noto Sans",sans-serif !important}
+
+/* Table styles */
+th {
+ font-family: "Noto Sans",sans-serif !important
+}
+
+/* Responsiveness fixes */
+video {
+ max-width: 100%;
+}
+
+@media all and (max-width: 600px) {
+table {
+ width: 55vw!important;
+ font-size: 3vw;
+}}
+
+
+body {font-family: "Fira Sans","Helvetica Neue",Helvetica,Calibri,Verdana,sans-serif;}
+
+/* Style the tab */
+.tab {
+ overflow: hidden;
+ border: 1px solid #ccc;
+ background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+ background-color: inherit;
+ float: left;
+ border: none;
+ outline: none;
+ cursor: pointer;
+ padding: 14px 16px;
+ transition: 0.3s;
+ font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+ background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+ background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+ display: none;
+ padding: 6px 12px;
+ border: 1px solid #ccc;
+ border-top: none;
+}
+
+.tabcontent {
+ animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+ from {opacity: 0;}
+ to {opacity: 1;}
+}
+
+.gridview {
+ font-family: arial, sans-serif;
+ border-collapse: collapse;
+ width: 100%;
+}
+.gridview th {
+ background-color: #808080;
+ border: 1px solid #dddddd;
+ text-align: center;
+ padding: 0px 0px 0px 0px;
+ margin:0px;
+ height: 0px;
+}
+
+.gridview td {
+ border: 0px solid #dddddd;
+ /*text-align: left;*/
+ padding: 0px 5px 0px 5px;
+ margin:0px;
+ height: 0px;
+}
+
+.gridview tr:nth-child(even) {
+ background-color: #dddddd;
+}
+.gridview table th {
+ color:#ffffff;
+}
+table p
+{
+ padding:0px;
+ margin:0px;
+}
+
+li p{
+ margin: 0px 0;
+}
+

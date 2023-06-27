@@ -1,0 +1,11 @@
+++++
+<div class="tab">
+  <button class="tablinks" onclick="openCode(event, 'lua-help')" id="default-help">Lua</button>
+  <button class="tablinks" onclick="openCode(event, 'moonscript-help')">Moonscript</button>
+  <button class="tablinks" onclick="openCode(event, 'javascript-help')">Javascript</button>
+  <button class="tablinks" onclick="openCode(event, 'wren-help')">Wren</button>
+  <button class="tablinks" onclick="openCode(event, 'fennel-help')">Fennel</button>
+  <button class="tablinks" onclick="openCode(event, 'squirrel-help')">Squirrel</button>
+  <button class="tablinks" onclick="openCode(event, 'ruby-help')">Ruby</button>
+</div>
+++++

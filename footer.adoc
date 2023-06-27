@@ -1,0 +1,25 @@
+++++
+<script>
+function openCode(evt, languageName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(languageName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+  // Get the element with id="default-cart" and click on it
+  document.getElementById("default-help").click();
+  document.getElementById("default-cart").click();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js" integrity="sha512-yUUc0qWm2rhM7X0EFe82LNnv2moqArj5nro/w1bi05A09hRVeIZbN6jlMoyu0+4I/Bu4Ck/85JQIU82T82M28w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/moonscript.min.js" integrity="sha512-qYLhIC3ONznoCygwyU6uOujJYGM1rRhZpQQ1Afx5YUkmDJvVTUFqYWQ2nLlB+hJ3hLbPVlztUPnarOC7kqkUdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/wren.min.js" integrity="sha512-MCSaLDF8YgOEhceoKwt85cmVW1zrlZeKmGMypiPeyVRqpA3y+1740q+2XwQytpcUlXcEq+KygUTA18ArdbMJXQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/scheme.min.js" integrity="sha512-9FI+lQbfArpTNsanZBAYd2kxTVLeaplIS8vje/47McjOBGINUR2XlHoysmOW+C89Y4jS1oiR5qBtk35T++8+Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>hljs.highlightAll();</script>
+++++

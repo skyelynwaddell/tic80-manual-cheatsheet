@@ -1,0 +1,9 @@
+== Memory Map
+
+.Memory Map
+[%autowidth]
+[.gridview]
+[%header,format=csv,separator="|",stripes=even,cols="^m,<m,>m,<m"]
+|===
+include::memory_map.psv[]
+|===

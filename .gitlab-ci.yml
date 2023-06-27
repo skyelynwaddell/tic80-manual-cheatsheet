@@ -1,0 +1,12 @@
+image: busybox
+
+pages: 
+  stage: deploy
+  artifacts: 
+    paths: 
+      - public
+  script: 
+    - mkdir public
+    - mv *.html public
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH

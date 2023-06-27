@@ -1,0 +1,11 @@
+++++
+<div class="tab">
+  <button class="tablinks" onclick="openCode(event, 'lua-cart')" id="default-cart">Lua</button>
+  <button class="tablinks" onclick="openCode(event, 'moonscript-cart')">Moonscript</button>
+  <button class="tablinks" onclick="openCode(event, 'javascript-cart')">Javascript</button>
+  <button class="tablinks" onclick="openCode(event, 'wren-cart')">Wren</button>
+  <button class="tablinks" onclick="openCode(event, 'fennel-cart')">Fennel</button>
+  <button class="tablinks" onclick="openCode(event, 'squirrel-cart')">Squirrel</button>
+  <button class="tablinks" onclick="openCode(event, 'ruby-cart')">Ruby</button>
+</div>
+++++

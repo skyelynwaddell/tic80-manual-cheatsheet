@@ -1,0 +1,51 @@
+++++
+<div id="lua-cart" class="tabcontent"><pre><code class="language-lua">
+++++
+++++
+include::default_cart.lua[]
+++++
+++++
+</code></pre></div>
+<div id="moonscript-cart" class="tabcontent"><pre><code class="language-moon">
+++++
+++++
+include::default_cart.moon[]
+++++
+++++
+</code></pre></div>
+<div id="javascript-cart" class="tabcontent"><pre><code class="language-js">
+++++
+++++
+include::default_cart.js[]
+++++
+++++
+</code></pre></div>
+<div id="wren-cart" class="tabcontent"><pre><code class="language-wren">
+++++
+++++
+include::default_cart.wren[]
+++++
+++++
+</code></pre></div>
+<div id="fennel-cart" class="tabcontent"><pre><code class="language-scheme">
+++++
+++++
+include::default_cart.fnl[]
+++++
+++++
+</code></pre></div>
+<div id="squirrel-cart" class="tabcontent"><pre><code class="language-c">
+++++
+++++
+include::default_cart.nut[]
+++++
+++++
+</code></pre></div>
+<div id="ruby-cart" class="tabcontent"><pre><code class="language-ruby">
+++++
+++++
+include::default_cart.rb[]
+++++
+++++
+</code></pre></div>
+++++

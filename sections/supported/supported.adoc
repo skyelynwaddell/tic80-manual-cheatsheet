@@ -1,0 +1,16 @@
+
+== Supported Platforms
+
+TIC is developed in pure C, with SDL and Lua libraries. It works on all popular platforms, including:
+[square,options="compact"]
+ * HTML5
+ * Windows
+ * Windows 10 UWP
+ * Linux 32/64bit
+ * Android
+ * Mac OS
+ * Raspberry Pi / Baremetal
+ * Nintendo 3DS
+ * Pocket CHIP
+ * iOS (courtesy of CliffsDover and Bruno Philipe)
+ * libretro

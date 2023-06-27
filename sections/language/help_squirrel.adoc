@@ -1,0 +1,24 @@
+++++
+<div id="squirrel-help" class="tabcontent">
+++++
+
+image::http://squirrel-lang.org/images/simple_nut.png[alt=Logo,width=64,height=64,align="center"]
+
+Website at <http://squirrel-lang.org/>
+
+Squirrel is a high level imperative, object-oriented programming language, designed to be a light-weight scripting language that fits in the size, memory bandwidth, and real-time requirements of applications like video games. Although Squirrel offers a wide range of features like:
+[square,options="compact"]
+ * dynamic typing
+ * delegation
+ * classes & inheritance
+ * higher order functions
+ * lexical scoping
+ * generators
+ * cooperative threads(coroutines)
+ * tail recursion
+ * exception handling
+
+Squirrel's syntax is similar to C/C++/Java etc... but the language has a very dynamic nature like Python/Lua etc...
+++++
+</div>
+++++

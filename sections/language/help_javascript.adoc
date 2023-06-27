@@ -1,0 +1,15 @@
+++++
+<div id="javascript-help" class="tabcontent">
+++++
+
+image::https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png[alt=Logo,width=64,height=64,align="center"]
+
+Website at <https://duktape.org/>
+
+Duktape is an embeddable Javascript engine, with a focus on portability and compact footprint.
+
+JavaScript is a high-level, often just-in-time compiled language that conforms to the ECMAScript standard. It has dynamic typing, prototype-based object-orientation, and first-class functions. It is multi-paradigm, supporting event-driven, functional, and imperative programming styles.
+
+++++
+</div>
+++++

@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Asciidoctor 2.0.17">
+  <meta name="author" content="parlortricks">
+  <link rel="icon" type="image/png" href="./images/tic80.png">
+  <title>Tic-80 Cheat Sheet</title>
+  <style>
+    /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+
+    @import url("//fonts.googleapis.com/css?family=Noto+Sans:300,600italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700");
+    @import url("https://cdn.jsdelivr.net/gh/asciidoctor/asciidoctor@2.0/data/stylesheets/asciidoctor-default.css");
+    /* Default asciidoc style framework - important */
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css");
+
+    @font-face {
+      font-family: "tic80font";
+      src: "./fonts/tic80font.ttf";
+    }
+
+
+    /* CUSTOMISATIONS */
+    /* Change the values in root for quick customisation. If you want even more fine grain... venture further. */
+
+    :root {
+      --maincolor: #FFFFFF;
+      --primarycolor: #2c3e50;
+      --secondarycolor: #ba3925;
+      --tertiarycolor: #186d7a;
+      --sidebarbackground: #CCC;
+      --linkcolor: #b71c1c;
+      --linkcoloralternate: #f44336;
+      --white: #FFFFFF;
+      --black: #000000;
+    }
+
+    /* Text styles */
+    h1 {
+      color: var(--primarycolor) !important;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--secondarycolor) !important;
+    }
+
+    .title {
+      color: var(--tertiarycolor) !important;
+      font-family: "Noto Sans", sans-serif !important;
+      font-style: normal !important;
+      font-weight: normal !important;
+    }
+
+    p {
+      font-family: "Noto Sans", sans-serif !important
+    }
+
+    .table{
+      justify-content: left;
+      float:left;
+      text-align: center;
+      padding:5px;
+      margin:2px;
+      margin-bottom: 20px;
+      float:top;
+    }
+
+    /* Table styles */
+    th {
+      font-family: "Noto Sans", sans-serif !important
+    }
+
+    /* Responsiveness fixes */
+    video {
+      max-width: 100%;
+    }
+
+    @media all and (max-width: 600px) {
+      table {
+        width: 55vw !important;
+        font-size: 3vw;
+      }
+    }
+
+
+    body {
+      font-family: "tic80font", "Helvetica Neue", Helvetica, Calibri, Verdana, sans-serif;
+    }
+
+    /* Style the tab */
+    .tab {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+    }
+
+    /* Style the buttons inside the tab */
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: #ddd;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: #ccc;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+
+    .tabcontent {
+      animation: fadeEffect 1s;
+      /* Fading effect takes 1 second */
+    }
+
+    /* Go from zero to full opacity */
+    @keyframes fadeEffect {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .playertable{
+      float:left;
+      margin:20px;
+    }
+
+    .gridview {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .gridview th {
+      background-color: #808080;
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 0px 0px 0px 0px;
+      margin: 0px;
+      height: 0px;
+    }
+
+    .gridview td {
+      border: 0px solid #dddddd;
+      /*text-align: left;*/
+      padding: 0px 5px 0px 5px;
+      margin: 0px;
+      height: 0px;
+    }
+
+    .gridview tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+
+    .gridview table th {
+      color: #ffffff;
+    }
+
+    table p {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    li p {
+      margin: 0px 0;
+    }
+  </style>
+</head>
+
+<body class="article toc2 toc-left">
+  <div id="header">
+    <h1>Tic-80 Cheat Sheet</h1>
+    <div class="details">
+      <span id="author" class="author">parlortricks</span><br>
+      <span id="email" class="email"><a href="mailto:parlortricks@fastmail.fm">parlortricks@fastmail.fm</a></span><br>
+      <span id="revnumber">version 0.1,</span>
+      <span id="revdate">2022-07-07</span>
+      <br><span id="revremark">First steps to a cheat sheet.</span>
+    </div>
+    <div id="toc" class="toc2">
+      <div id="toctitle">Table of Contents</div>
+      <ul class="sectlevel1">
+        <li><a href="#_specifications">Specifications</a></li>
+        <li><a href="#_memory_map">Memory Map</a></li>
+        <li><a href="#_language_help">Language Help</a></li>
+        <li><a href="#_default_carts">Default Carts</a></li>
+        <li><a href="#_command_line">Command Line</a></li>
+        <li><a href="#_shortcuts">Shortcuts</a></li>
+        <li><a href="#_supported_platforms">Supported Platforms</a></li>
+        <li><a href="#_downloads">Downloads</a></li>
+        <li><a href="#_links">Links</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="content">
+    <div id="preamble">
+      <div class="sectionbody">
+        <div class="paragraph">
+          <p>TIC-80 is a free and open source fantasy computer for making, playing and sharing tiny games.</p>
+        </div>
+        <div class="paragraph">
+          <p>Website at <a href="https://tic80.com" class="bare">https://tic80.com</a></p>
+        </div>
+        <div class="paragraph">
+          <p>There are built-in tools for development: code, sprites, maps, sound editors and the command line, which is
+            enough to create a mini retro game. At the exit you will get a cartridge file, which can be stored and
+            played on the website.</p>
+        </div>
+        <div class="paragraph">
+          <p>Also, the game can be packed into a player that works on all popular platforms and distribute as you wish.
+            To make a retro styled game the whole process of creation takes place under some technical limitations:
+            240x136 pixels display, 16 color palette, 256 8x8 color sprites, 4 channel sound and etc.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sect1">
+      <h2 id="_specifications">Specifications</h2>
+      <div class="sectionbody">
+        <div class="paragraph">
+          <p>Current version of Tic-80 is <code>1.0.2164</code></p>
+        </div>
+        <table class="tableblock frame-all grid-all stripes-even fit-content gridview">
+          <caption class="title">Table 1. Specs</caption>
+          <colgroup>
+            <col>
+            <col>
+          </colgroup>
+          <tbody>
+            <tr>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><strong>Resolution</strong></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>240x136 pixel display</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><strong>Color</strong></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>16 color palette (chosen from 24-bit colorspace)</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><strong>Input</strong></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>4 gamepads with 8 buttons / mouse / keyboard</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><strong>Sprites</strong></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>256 foreground sprites and 256 background tiles (8x8 pixel)</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><strong>Map</strong></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>240x136 tiles (ie, 1920x1088 pixels)</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><strong>Sound</strong></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>4 channels (with editable waveform envelopes)</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><strong>Code</strong></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>512KB of source or 256KB compiled BINARY size</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><strong>Memory</strong></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>Up to 272kb of RAM (including 32KB of VRAM)</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><strong>Bankswitching</strong></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>Up to 8 banks in cart (PRO version only)</code></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="sect1">
+      <h2 id="_memory_map">Memory Map</h2>
+      <div class="sectionbody">
+        <table class="tableblock frame-all grid-all stripes-even fit-content gridview">
+          <caption class="title">Table 2. Memory Map</caption>
+          <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+          </colgroup>
+          <thead>
+            <tr>
+              <th class="tableblock halign-center valign-top">ADDR</th>
+              <th class="tableblock halign-left valign-top">INFO</th>
+              <th class="tableblock halign-right valign-top">BYTES</th>
+              <th class="tableblock halign-left valign-top">COMMENTS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tableblock halign-center valign-top">
+                <p class="tableblock"><code>0x00000</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>VRAM bank 0 or 1</code></p>
+              </td>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>16,384</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>32kB Video RAM (see below)</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-center valign-top">
+                <p class="tableblock"><code>0x04000</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>Tiles</code></p>
+              </td>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>8,192</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>256 8x8 4-bit bg tiles - #0 to #255</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-center valign-top">
+                <p class="tableblock"><code>0x06000</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>Sprites</code></p>
+              </td>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>8,192</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>256 8x8 4-bit fg sprites - #256 to #511</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-center valign-top">
+                <p class="tableblock"><code>0x08000</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>Map</code></p>
+              </td>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>32,640</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>240x136 map - indexed by tile/sprite</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-center valign-top">
+                <p class="tableblock"><code>0x0FF80</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>Gamepads</code></p>
+              </td>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>4</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>button state for 4 gamepads</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-center valign-top">
+                <p class="tableblock"><code>0x0FF84</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>Mouse</code></p>
+              </td>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>4</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>mouse state X / Y / buttons / scroll</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-center valign-top">
+                <p class="tableblock"><code>0x0FF88</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>Keyboard</code></p>
+              </td>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>4</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>keyboard state, up to 4 pressed buttons</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-center valign-top">
+                <p class="tableblock"><code>0x0FF8C</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>SFX State</code></p>
+              </td>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>16</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>&#8230;&#8203;</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-center valign-top">
+                <p class="tableblock"><code>0x0FF9C</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>Sound Registers</code></p>
+              </td>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>72</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>&#8230;&#8203;</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-center valign-top">
+                <p class="tableblock"><code>0x0FFE4</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>Waveforms</code></p>
+              </td>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>256</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>16 waveforms, each 32 x 4-bit values</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-center valign-top">
+                <p class="tableblock"><code>0x100E4</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>SFX</code></p>
+              </td>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>4,224</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>&#8230;&#8203;</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-center valign-top">
+                <p class="tableblock"><code>0x11164</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>Music Patterns</code></p>
+              </td>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>11,520</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>&#8230;&#8203;</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-center valign-top">
+                <p class="tableblock"><code>0x13E64</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>Music Tracks</code></p>
+              </td>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>408</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>&#8230;&#8203;</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-center valign-top">
+                <p class="tableblock"><code>0x13FFC</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>Sound State</code></p>
+              </td>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>4</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>&#8230;&#8203;</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-center valign-top">
+                <p class="tableblock"><code>0x14000</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>Stereo Volume</code></p>
+              </td>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>4</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>&#8230;&#8203;</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-center valign-top">
+                <p class="tableblock"><code>0x14004</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>Persistent Memory</code></p>
+              </td>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>1,024</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>persistent RAM, per cartridge</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-center valign-top">
+                <p class="tableblock"><code>0x14404</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>Sprite Flags</code></p>
+              </td>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>512</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>&#8230;&#8203;</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-center valign-top">
+                <p class="tableblock"><code>0x14604</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>System Font</code></p>
+              </td>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>2,048</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>256 8x8 1-bit font (used by print)</code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-center valign-top">
+                <p class="tableblock"><code>0x14E04</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>RESERVED</code></p>
+              </td>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>12,796</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code>&#8230;&#8203;</code></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="sect1">
+      <h2 id="_language_help">Language Help</h2>
+      <div class="sectionbody">
+        <div class="paragraph">
+          <p>Below are links for each of the languages to assist in learning.</p>
+        </div>
+        <div class="tab">
+          <button class="tablinks" onclick="openCode(event, 'lua-help')" id="default-help">Lua</button>
+          <button class="tablinks" onclick="openCode(event, 'moonscript-help')">Moonscript</button>
+          <button class="tablinks" onclick="openCode(event, 'javascript-help')">Javascript</button>
+          <button class="tablinks" onclick="openCode(event, 'wren-help')">Wren</button>
+          <button class="tablinks" onclick="openCode(event, 'fennel-help')">Fennel</button>
+          <button class="tablinks" onclick="openCode(event, 'squirrel-help')">Squirrel</button>
+          <button class="tablinks" onclick="openCode(event, 'ruby-help')">Ruby</button>
+        </div>
+        <div id="lua-help" class="tabcontent">
+          <div class="imageblock text-center">
+            <div class="content">
+              <img src="https://www.lua.org/images/lua-logo.gif" alt="Logo" width="64" height="64">
+            </div>
+          </div>
+          <div class="paragraph">
+            <p>Website at <a href="https://www.lua.org/" class="bare">https://www.lua.org/</a></p>
+          </div>
+          <div class="paragraph">
+            <p>Lua is a powerful, efficient, lightweight, embeddable scripting language. It supports procedural
+              programming, object-oriented programming, functional programming, data-driven programming, and data
+              description.</p>
+          </div>
+          <div class="paragraph">
+            <p>Lua combines simple procedural syntax with powerful data description constructs based on associative
+              arrays and extensible semantics. Lua is dynamically typed, runs by interpreting bytecode with a
+              register-based virtual machine, and has automatic memory management with incremental garbage collection,
+              making it ideal for configuration, scripting, and rapid prototyping.</p>
+          </div>
+        </div>
+        <div id="moonscript-help" class="tabcontent">
+          <div class="imageblock text-center">
+            <div class="content">
+              <img src="https://moonscript.org/images/logo.png" alt="Logo" width="64" height="64">
+            </div>
+          </div>
+          <div class="paragraph">
+            <p>Website at <a href="https://moonscript.org/" class="bare">https://moonscript.org/</a></p>
+          </div>
+          <div class="paragraph">
+            <p><strong>MoonScript</strong> is a dynamic scripting language that compiles into Lua. It gives you the
+              power of one of the fastest scripting languages combined with a rich set of features.</p>
+          </div>
+          <div class="paragraph">
+            <p>MoonScript provides a clean syntax using significant whitespace that avoids all the keyword noise
+              typically seen in a Lua script. Below is a sample of some constructs found in the language.</p>
+          </div>
+          <div class="paragraph">
+            <p>It also adds table comprehensions, implicit return on functions, classes, inheritance, scope management
+              statements import &amp; export, and a convenient object creation statement called with.</p>
+          </div>
+        </div>
+        <div id="javascript-help" class="tabcontent">
+          <div class="imageblock text-center">
+            <div class="content">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="Logo" width="64"
+                height="64">
+            </div>
+          </div>
+          <div class="paragraph">
+            <p>Website at <a href="https://duktape.org/" class="bare">https://duktape.org/</a></p>
+          </div>
+          <div class="paragraph">
+            <p>Duktape is an embeddable Javascript engine, with a focus on portability and compact footprint.</p>
+          </div>
+          <div class="paragraph">
+            <p>JavaScript is a high-level, often just-in-time compiled language that conforms to the ECMAScript
+              standard. It has dynamic typing, prototype-based object-orientation, and first-class functions. It is
+              multi-paradigm, supporting event-driven, functional, and imperative programming styles.</p>
+          </div>
+        </div>
+        <div id="wren-help" class="tabcontent">
+          <div class="imageblock text-center">
+            <div class="content">
+              <img src="https://wren.io/wren.svg" alt="Logo" width="64" height="64">
+            </div>
+          </div>
+          <div class="paragraph">
+            <p>Website at <a href="https://wren.io" class="bare">https://wren.io</a></p>
+          </div>
+          <div class="paragraph">
+            <p>Wren is a small, fast, class-based concurrent scripting language. Think Smalltalk in a Lua-sized package
+              with a dash of Erlang and wrapped up in a familiar, modern <a
+                href="https://wren.io/syntax.html">syntax</a>.</p>
+          </div>
+          <div class="ulist">
+            <ul>
+              <li>
+                <p><strong>Wren is small</strong>. The VM implementation is under 4,000 semicolons. You can skim the
+                  whole thing in an afternoon. It’s small, but not dense. It is readable and lovingly-commented.</p>
+              </li>
+              <li>
+                <p><strong>Wren is fast</strong>. A fast single-pass compiler to tight bytecode, and a compact object
+                  representation help Wren compete with other dynamic languages.</p>
+              </li>
+              <li>
+                <p><strong>Wren is class-based</strong>. There are lots of scripting languages out there, but many have
+                  unusual or non-existent object models. Wren places classes front and center.</p>
+              </li>
+              <li>
+                <p><strong>Wren is concurrent</strong>. Lightweight fibers are core to the execution model and let you
+                  organize your program into a flock of communicating coroutines.</p>
+              </li>
+              <li>
+                <p><strong>Wren is a scripting language</strong>. Wren is intended for embedding in applications. It has
+                  no dependencies, a small standard library, and an easy-to-use C API. It compiles cleanly as C99, C++98
+                  or anything later.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="fennel-help" class="tabcontent">
+          <div class="imageblock text-center">
+            <div class="content">
+              <img src="https://fennel-lang.org/logo.svg" alt="Logo" width="64" height="64">
+            </div>
+          </div>
+          <div class="paragraph">
+            <p>Website at <a href="https://fennel-lang.org/" class="bare">https://fennel-lang.org/</a></p>
+          </div>
+          <div class="paragraph">
+            <p>Fennel is a programming language that brings together the speed, simplicity, and reach of <a
+                href="https://www.lua.org/">Lua</a> with the flexibility of a <a
+                href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">lisp syntax and macro system</a>.</p>
+          </div>
+          <div class="ulist">
+            <ul>
+              <li>
+                <p><strong>Full Lua compatibility</strong>: Easily call any Lua function or library from Fennel and
+                  vice-versa.</p>
+              </li>
+              <li>
+                <p><strong>Zero overhead</strong>: Compiled code should be just as efficient as hand-written Lua.</p>
+              </li>
+              <li>
+                <p><strong>Compile-time macros</strong>: Ship compiled code with no runtime dependency on Fennel.</p>
+              </li>
+              <li>
+                <p><strong>Embeddable</strong>: Fennel is a one-file library as well as an executable. Embed it in other
+                  programs to support runtime extensibility and interactive development.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="paragraph">
+            <p>Anywhere you can run Lua code, you can run Fennel code.</p>
+          </div>
+          <div class="ulist square">
+            <ul class="square">
+              <li>
+                <p>The <a href="https://fennel-lang.org/tutorial">Tutorial</a> teaches you the basics of the language.
+                </p>
+              </li>
+              <li>
+                <p>The <a href="https://fennel-lang.org/rationale">Rationale</a> explains the reasoning why Fennel was
+                  created.</p>
+              </li>
+              <li>
+                <p>The <a href="https://fennel-lang.org/lua-primer">Lua primer</a> will catch you up if you don&#8217;t
+                  already know Lua.</p>
+              </li>
+              <li>
+                <p>The <a href="https://fennel-lang.org/reference">Reference</a> lists out all built-in special forms
+                  and what they&#8217;re for.</p>
+              </li>
+              <li>
+                <p>The <a href="https://fennel-lang.org/style">Style Guide</a> advises on how to write clear and consise
+                  code.</p>
+              </li>
+              <li>
+                <p>The <a href="https://fennel-lang.org/macros">Macro Guide</a> explains how to write macros.</p>
+              </li>
+              <li>
+                <p>Curious about how a piece of code compiles? <a href="https://fennel-lang.org/see">See for
+                    yourself</a> with a side-by-side view how Fennel turns into Lua and vice-versa with Antifennel</p>
+              </li>
+              <li>
+                <p>#fennel channel on <a href="https://libera.chat/">Libera.Chat</a> and on <a
+                    href="https://matrix.to/#/!rnpLWzzTijEUDhhtjW:matrix.org">Matrix</a>. This is where the developers
+                  for Fennel hang out.</p>
+              </li>
+              <li>
+                <p>Community <a href="https://fennel-lang.org/events">events</a></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="squirrel-help" class="tabcontent">
+          <div class="imageblock text-center">
+            <div class="content">
+              <img src="http://squirrel-lang.org/images/simple_nut.png" alt="Logo" width="64" height="64">
+            </div>
+          </div>
+          <div class="paragraph">
+            <p>Website at <a href="http://squirrel-lang.org/" class="bare">http://squirrel-lang.org/</a></p>
+          </div>
+          <div class="paragraph">
+            <p>Squirrel is a high level imperative, object-oriented programming language, designed to be a light-weight
+              scripting language that fits in the size, memory bandwidth, and real-time requirements of applications
+              like video games. Although Squirrel offers a wide range of features like:</p>
+          </div>
+          <div class="ulist square">
+            <ul class="square">
+              <li>
+                <p>dynamic typing</p>
+              </li>
+              <li>
+                <p>delegation</p>
+              </li>
+              <li>
+                <p>classes &amp; inheritance</p>
+              </li>
+              <li>
+                <p>higher order functions</p>
+              </li>
+              <li>
+                <p>lexical scoping</p>
+              </li>
+              <li>
+                <p>generators</p>
+              </li>
+              <li>
+                <p>cooperative threads(coroutines)</p>
+              </li>
+              <li>
+                <p>tail recursion</p>
+              </li>
+              <li>
+                <p>exception handling</p>
+              </li>
+            </ul>
+          </div>
+          <div class="paragraph">
+            <p>Squirrel&#8217;s syntax is similar to C/C++/Java etc&#8230;&#8203; but the language has a very dynamic
+              nature like Python/Lua etc&#8230;&#8203;</p>
+          </div>
+        </div>
+        <div id="ruby-help" class="tabcontent">
+          <div class="imageblock text-center">
+            <div class="content">
+              <img src="https://mruby.org/assets/images/mruby_logo_red_icon.png" alt="Logo" width="64" height="64">
+            </div>
+          </div>
+          <div class="paragraph">
+            <p>Website at <a href="https://mruby.org/" class="bare">https://mruby.org/</a></p>
+          </div>
+          <div class="paragraph">
+            <p>mruby is the lightweight implementation of the <a href="https://www.ruby-lang.org/en/">Ruby</a> language
+              complying with part of the <a
+                href="http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=59579">ISO
+                standard</a>.</p>
+          </div>
+          <div class="paragraph">
+            <p>Ruby is a dynamic, open source programming language with a focus on simplicity and productivity. It has
+              an elegant syntax that is natural to read and easy to write.</p>
+          </div>
+          <div class="paragraph">
+            <p>In Ruby, everything is an object. Every bit of information and code can be given their own properties and
+              actions. Object-oriented programming calls properties by the name instance variables and actions are known
+              as methods.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sect1">
+      <h2 id="_default_carts">Default Carts</h2>
+      <div class="sectionbody">
+        <div class="paragraph">
+          <p>The carts listed below can be generated by typing the following at the tic80 cli:</p>
+        </div>
+        <div class="ulist square">
+          <ul class="square">
+            <li>
+              <p><code>new lua</code></p>
+            </li>
+            <li>
+              <p><code>new moon</code></p>
+            </li>
+            <li>
+              <p><code>new js</code></p>
+            </li>
+            <li>
+              <p><code>new wren</code></p>
+            </li>
+            <li>
+              <p><code>new fennel</code></p>
+            </li>
+            <li>
+              <p><code>new squirrel</code></p>
+            </li>
+            <li>
+              <p><code>new ruby</code></p>
+            </li>
+          </ul>
+        </div>
+        <div class="tab">
+          <button class="tablinks" onclick="openCode(event, 'lua-cart')" id="default-cart">Lua</button>
+          <button class="tablinks" onclick="openCode(event, 'moonscript-cart')">Moonscript</button>
+          <button class="tablinks" onclick="openCode(event, 'javascript-cart')">Javascript</button>
+          <button class="tablinks" onclick="openCode(event, 'wren-cart')">Wren</button>
+          <button class="tablinks" onclick="openCode(event, 'fennel-cart')">Fennel</button>
+          <button class="tablinks" onclick="openCode(event, 'squirrel-cart')">Squirrel</button>
+          <button class="tablinks" onclick="openCode(event, 'ruby-cart')">Ruby</button>
+        </div>
+        <div id="lua-cart" class="tabcontent">
+          <pre><code class="language-lua">
+-- title:   game title
+-- author:  game developer, email, etc.
+-- desc:    short description
+-- site:    website link
+-- license: MIT License (change this to your license of choice)
+-- version: 0.1
+-- script:  lua
+
+t=0
+x=96
+y=24
+
+function TIC()
+
+	if btn(0) then y=y-1 end
+	if btn(1) then y=y+1 end
+	if btn(2) then x=x-1 end
+	if btn(3) then x=x+1 end
+
+	cls(13)
+	spr(1+t%60//30*2,x,y,14,3,0,0,2,2)
+	print("HELLO WORLD!",84,84)
+	t=t+1
+end
+</code></pre>
+        </div>
+        <div id="moonscript-cart" class="tabcontent">
+          <pre><code class="language-moon">
+-- title:   game title
+-- author:  game developer, email, etc.
+-- desc:    short description
+-- site:    website link
+-- license: MIT License (change this to your license of choice)
+-- version: 0.1
+-- script:  lua
+  
+t=0
+x=96
+y=24
+  
+function TIC()
+  
+ if btn(0) then y=y-1 end
+ if btn(1) then y=y+1 end
+ if btn(2) then x=x-1 end
+ if btn(3) then x=x+1 end
+  
+ cls(13)
+ spr(1+t%60//30*2,x,y,14,3,0,0,2,2)
+ print("HELLO WORLD!",84,84)
+ t=t+1
+end
+</code></pre>
+        </div>
+        <div id="javascript-cart" class="tabcontent">
+          <pre><code class="language-js">
+// title:   game title
+// author:  game developer, email, etc.
+// desc:    short description
+// site:    website link
+// license: MIT License (change this to your license of choice)
+// version: 0.1
+// script:  js
+  
+var t=0
+var x=96
+var y=24
+  
+function TIC()
+{
+ if(btn(0))y--
+ if(btn(1))y++
+ if(btn(2))x--
+ if(btn(3))x++
+  
+ cls(13)
+ spr(1+((t%60)/30|0)*2,x,y,14,3,0,0,2,2)
+ print("HELLO WORLD!",84,84)
+ t++
+}
+</code></pre>
+        </div>
+        <div id="wren-cart" class="tabcontent">
+          <pre><code class="language-wren">
+// title:   game title
+// author:  game developer, email, etc.
+// desc:    short description
+// site:    website link
+// license: MIT License (change this to your license of choice)
+// version: 0.1
+// script:  wren
+  
+class Game is TIC{
+  
+ construct new(){
+  _t=0
+  _x=96
+  _y=24
+ }
+   
+ TIC(){
+  if(TIC.btn(0)){
+   _y=_y-1
+  }
+  if(TIC.btn(1)){
+   _y=_y+1
+  }
+  if(TIC.btn(2)){
+   _x=_x-1
+  }
+  if(TIC.btn(3)){
+   _x=_x+1
+  }
+    
+  TIC.cls(13)
+  TIC.spr(1+((_t%60)/30|0)*2,_x,_y,14,3,0,0,2,2)
+  TIC.print("HELLO WORLD!",84,84)
+    
+  _t=_t+1
+ }
+} 
+</code></pre>
+        </div>
+        <div id="fennel-cart" class="tabcontent">
+          <pre><code class="language-scheme">
+;; title:   game title
+;; author:  game developer, email, etc.
+;; desc:    short description
+;; site:    website link
+;; license: MIT License (change this to your license of choice)
+;; version: 0.1
+;; script:  fennel
+;; strict:  true
+  
+(var t 0)
+(var x 96)
+(var y 24)
+  
+(fn _G.TIC []
+  (when (btn 0) (set y (- y 1)))
+  (when (btn 1) (set y (+ y 1)))
+  (when (btn 2) (set x (- x 1)))
+  (when (btn 3) (set x (+ x 1)))
+  (cls 0)
+  (spr (+ 1 (* (// (% t 60) 30) 2))
+       x y 14 3 0 0 2 2)
+  (print "HELLO WORLD!" 84 84)
+  (set t (+ t 1)))  
+</code></pre>
+        </div>
+        <div id="squirrel-cart" class="tabcontent">
+          <pre><code class="language-c">
+// title:   game title
+// author:  game developer, email, etc.
+// desc:    short description
+// site:    website link
+// license: MIT License (change this to your license of choice)
+// version: 0.1
+// script:  squirrel
+  
+t<-0
+x<-96
+y<-24
+  
+function TIC()
+{
+ if (btn(0)) y=y-1;
+ if (btn(1)) y=y+1;
+ if (btn(2)) x=x-1;
+ if (btn(3)) x=x+1;
+  
+ cls(13)
+ spr(1+((t%60)/30)*2,x,y,14,3,0,0,2,2)
+ print("HELLO WORLD!",84,84)
+ t=t+1
+} 
+</code></pre>
+        </div>
+        <div id="ruby-cart" class="tabcontent">
+          <pre><code class="language-ruby">
+# title:   game title
+# author:  game developer, email, etc.
+# desc:    short description
+# site:    website link
+# license: MIT License (change this to your license of choice)
+# version: 0.1
+# script:  ruby
+
+$t=0
+$x=96
+$y=24
+
+def TIC
+ $y-=1 if btn 0
+ $y+=1 if btn 1
+ $x-=1 if btn 2
+ $x+=1 if btn 3
+
+ cls 13
+ spr 1+(($t%60)/30|0)*2,$x,$y,14,3,0,0,2,2
+ print "HELLO WORLD!",84,84
+ $t+=1
+end
+</code></pre>
+        </div>
+      </div>
+    </div>
+    <div class="sect1">
+      <h2 id="_command_line">Command Line</h2>
+      <div class="sectionbody">
+        <div class="paragraph">
+          <p>Options below available with <code>tic80 --help</code></p>
+        </div>
+        <div class="listingblock">
+          <div class="content">
+            <pre>Usage: tic80 [cart] [options]
+
+TIC-80 startup options:
+
+    -h, --help        show this help message and exit
+    --skip            skip startup animation
+    --volume=&lt;int&gt;    global volume value [0-15]
+    --cli             console only output
+    --fullscreen      enable fullscreen mode
+    --vsync           enable VSYNC
+    --soft            use software rendering
+    --fs=&lt;str&gt;        path to the file system folder
+    --scale=&lt;int&gt;     main window scale
+    --cmd=&lt;str&gt;       run commands in the console
+    --keepcmd         re-execute commands on every run
+    --version         print program version
+    --crt             enable CRT monitor effect</pre>
+          </div>
+        </div>
+        <div class="listingblock">
+          <div class="content">
+            <pre>tic80 --skip --fs .                                           skip startup animation and use current directory as storage
+tic80 --skip --cmd "load cart.tic"                            skip startup animation and load `cart.tic` cart
+tic80 --cmd surf                                              start TIC-80 in SURF mode
+tic80 --cmd "load cart.tic &amp; export html game.zip &amp; exit"     load `cart.tic` cart, export html `game.zip` and exit
+tic80 --cmd "load cart.tic &amp; save cart.lua &amp; exit"            load `cart.tic`, save as a text cart and exit
+tic80 --cmd "load cart.tic &amp; export sprites spr.gif &amp; exit"   load `cart.tic`, export sprites to `spr.gif` and exit
+tic80 --cmd "load cart.tic &amp; export track5 music.wav &amp; exit"  load `cart.tic`, export 5th track to `music.wav` and exit
+tic80 ../path/to/cart.tic --fs ../path/to                     use `../path/to/` as storage and load `cart.tic`
+tic80 &gt; log.txt                                               all trace output is redirected to the named file
+tic80 | Out-File log.txt                                      same as above for PowerShell users</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sect1">
+      <h2 id="_shortcuts">Shortcuts</h2>
+      <div class="sectionbody">
+        <table class="tableblock frame-all grid-all stripes-even stretch gridview">
+          <caption class="title">Table 3. General TIC-80 Shortcuts</caption>
+          <colgroup>
+            <col style="width: 50%;">
+            <col style="width: 50%;">
+          </colgroup>
+          <tbody>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>switch console/editor</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>ESC</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>show console</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>ALT+~</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>show code editor</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>ALT+1</code>/<code>F1</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>show sprite editor</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>ALT+2</code>/<code>F2</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>show map editor</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>ALT+3</code>/<code>F3</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>show sfx editor</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>ALT+4</code>/<code>F4</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>show music editor</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>ALT+5</code>/<code>F5</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>switch to previous/next editor mode</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>CTRL+PGUP</code>/<code>PGDOWN</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>fullscreen/window mode</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>F11</code>/<code>ALT+ENTER</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>run current project</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>CTRL+R</code>/<code>ENTER</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>cut/copy/paste in the editors</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>CTRL+X</code>/<code>C</code>/<code>V</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>save cart</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>CTRL+S</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>undo/redo changes</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>CTRL+Z</code>/<code>Y</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>navigate</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>ARROWS</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>toggle CRT filter</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>F6</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>assign cover image</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>F7</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>take a screenshot</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>F8</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>start/stop GIF video recording</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>F9</code></code></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="buttons">
+          <h2 id="_buttons">Buttons</h2>
+          <div class="sbuttonsbody">
+            <table class="tableblock frame-all grid-all stripes-even stretch gridview">
+              <caption class="title">Table 3.5. Buttons </caption>
+              <colgroup>
+                <col style="width: 50%;">
+                <col style="width: 50%;">
+              </colgroup>
+              
+              <table class="table">
+              <tbody>
+                
+               
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>0</code></p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P1 UP</code></code></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>1</code></p>
+                  </td>
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P1 DOWN</code></code></p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>2</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P1 LEFT</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>3</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P1 RIGHT</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>4</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P1 A</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>5</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P1 B</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>6</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P1 X</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>7</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P1 Y</code><code>
+                  </td>
+                </tr>
+
+
+                
+                
+                </table>
+                <table class="table">
+                
+
+              <tr>
+                <td class="tableblock halign-right valign-top">
+                  <p class="tableblock"><code>8</code></p>
+                </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P2 UP</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>9</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P2 DOWN</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>10</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P2 LEFT</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>11</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P2 RIGHT</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>12</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P2 A</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>13</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P2 B</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>14</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P2 X</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>15</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P2 Y</code><code>
+                  </td>
+                </tr>
+                <table class="table">
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>16</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P3 UP</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>17</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P3 DOWN</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>18</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P3 LEFT</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>19</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P3 RIGHT</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>20</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P3 A</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>21</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P3 B</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>22</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P3 X</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>23</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P3 Y</code><code>
+                  </td>
+                </tr>
+                </table>
+                <table class="table">
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>24</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P4 UP</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>25</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P4 DOWN</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>26</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P4 LEFT</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>27</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P4 RIGHT</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>28</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P4 A</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>29</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P4 B</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>30</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P4 X</code><code>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="tableblock halign-right valign-top">
+                    <p class="tableblock"><code>31</code></p>
+                  </td>
+
+                  <td class="tableblock halign-left valign-top">
+                    <p class="tableblock"><code><code>P4 Y</code><code>
+                  </td>
+                </tr>
+
+    
+
+
+               
+              
+            </table>
+
+        <table class="tableblock frame-all grid-all stripes-even stretch gridview">
+          <caption class="title">Table 4. Code Editor Shortcuts</caption>
+          <colgroup>
+            <col style="width: 50%;">
+            <col style="width: 50%;">
+          </colgroup>
+          <tbody>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>find</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>CTRL+F</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>go to line</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>CTRL+G</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>indent line</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>CTRL+TAB</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>unindent line</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>CTRL+SHIFT+TAB</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>show code outline</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>CTRL+O</code></code></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="tableblock frame-all grid-all stripes-even stretch gridview">
+          <caption class="title">Table 5. Sprite Editor Shortcuts</caption>
+          <colgroup>
+            <col style="width: 50%;">
+            <col style="width: 50%;">
+          </colgroup>
+          <tbody>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>choose previous/next palette color</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>[]</code></code></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>change brush size</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>-/=</code></code></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="tableblock frame-all grid-all stripes-even stretch gridview">
+          <caption class="title">Table 6. Map Editor Shortcuts</caption>
+          <colgroup>
+            <col style="width: 50%;">
+            <col style="width: 50%;">
+          </colgroup>
+          <tbody>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>show spritesheet</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>SHIFT</code></code></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="tableblock frame-all grid-all stripes-even stretch gridview">
+          <caption class="title">Table 7. Music Editor Shortcuts</caption>
+          <colgroup>
+            <col style="width: 50%;">
+            <col style="width: 50%;">
+          </colgroup>
+          <tbody>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>play pattern from cursor position</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>SHIFT+ENTER</code></code></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="tableblock frame-all grid-all stripes-even stretch gridview">
+          <caption class="title">Table 8. SFX Editor Shortcuts</caption>
+          <colgroup>
+            <col style="width: 50%;">
+            <col style="width: 50%;">
+          </colgroup>
+          <tbody>
+            <tr>
+              <td class="tableblock halign-right valign-top">
+                <p class="tableblock"><code>play sfx</code></p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><code><code>SPACE</code></code></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="sect1">
+      <h2 id="_supported_platforms">Supported Platforms</h2>
+      <div class="sectionbody">
+        <div class="paragraph">
+          <p>TIC is developed in pure C, with SDL and Lua libraries. It works on all popular platforms, including:</p>
+        </div>
+        <div class="ulist square">
+          <ul class="square">
+            <li>
+              <p>HTML5</p>
+            </li>
+            <li>
+              <p>Windows</p>
+            </li>
+            <li>
+              <p>Windows 10 UWP</p>
+            </li>
+            <li>
+              <p>Linux 32/64bit</p>
+            </li>
+            <li>
+              <p>Android</p>
+            </li>
+            <li>
+              <p>Mac OS</p>
+            </li>
+            <li>
+              <p>Raspberry Pi / Baremetal</p>
+            </li>
+            <li>
+              <p>Nintendo 3DS</p>
+            </li>
+            <li>
+              <p>Pocket CHIP</p>
+            </li>
+            <li>
+              <p>iOS (courtesy of CliffsDover and Bruno Philipe)</p>
+            </li>
+            <li>
+              <p>libretro</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="sect1">
+      <h2 id="_downloads">Downloads</h2>
+      <div class="sectionbody">
+        <div class="paragraph">
+          <p>You can download compiled versions for the major operating systems directly from the <a
+              href="https://github.com/nesbox/TIC-80/releases">releases page</a>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sect1">
+      <h2 id="_links">Links</h2>
+      <div class="sectionbody">
+        <table class="tableblock frame-all grid-all stripes-even fit-content gridview">
+          <colgroup>
+            <col>
+            <col>
+          </colgroup>
+          <tbody>
+            <tr>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock">Website</p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><a href="https://tic80.com" class="bare">https://tic80.com</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock">Twitter</p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><a href="https://twitter.com/tic_computer">@tic_computer</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock">Hashtag</p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><a href="https://twitter.com/#tic80">#TIC80</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock">Chat</p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><a href="https://t.me/tic80">Telegram</a> / <a
+                    href="https://discord.com/invite/HwZDw7n4dN">Discord</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock">Community</p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><a href="https://nesbox.itch.io/tic80/community">Itch.io</a> / <a
+                    href="https://vk.com/tic80">VKontakte</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock">Games made with Tic80</p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><a href="https://itch.io/games/tag-tic-80">Itch.io #tic-80</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock">Bugs</p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><a href="https://github.com/nesbox/tic.computer/issues">Github Issues</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock">Wiki</p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><a href="https://github.com/nesbox/tic.computer/wiki">Github Wiki</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock">Changelog</p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock"><a href="https://github.com/nesbox/tic.computer/wiki/changelog">Github
+                    Changelog</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock">Author</p>
+              </td>
+              <td class="tableblock halign-left valign-top">
+                <p class="tableblock">Nesbox (Vadim Grigoruk) // <a
+                    href="mailto:grigoruk@gmail.com">grigoruk@gmail.com</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <script>
+          function openCode(evt, languageName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+              tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(languageName).style.display = "block";
+            evt.currentTarget.className += " active";
+          }
+          // Get the element with id="default-cart" and click on it
+          document.getElementById("default-help").click();
+          document.getElementById("default-cart").click();
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"
+          integrity="sha512-yUUc0qWm2rhM7X0EFe82LNnv2moqArj5nro/w1bi05A09hRVeIZbN6jlMoyu0+4I/Bu4Ck/85JQIU82T82M28w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/moonscript.min.js"
+          integrity="sha512-qYLhIC3ONznoCygwyU6uOujJYGM1rRhZpQQ1Afx5YUkmDJvVTUFqYWQ2nLlB+hJ3hLbPVlztUPnarOC7kqkUdg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/wren.min.js"
+          integrity="sha512-MCSaLDF8YgOEhceoKwt85cmVW1zrlZeKmGMypiPeyVRqpA3y+1740q+2XwQytpcUlXcEq+KygUTA18ArdbMJXQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/scheme.min.js"
+          integrity="sha512-9FI+lQbfArpTNsanZBAYd2kxTVLeaplIS8vje/47McjOBGINUR2XlHoysmOW+C89Y4jS1oiR5qBtk35T++8+Vg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>hljs.highlightAll();</script>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <div id="footer-text">
+      Version 0.1<br>
+      Last updated 2022-07-07 15:42:22 +1000
+    </div>
+  </div>
+</body>
+
+</html>
