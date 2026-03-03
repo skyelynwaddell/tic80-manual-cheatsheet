@@ -3406,19 +3406,11 @@ tic80 | Out-File log.txt                                      same as above for 
                                                                                       <div class="sectionbody">
                                                                                         <div class="paragraph">
                                                                                           <p>
-                                                                                            <code>memset(dest value size)</code>
+                                                                                            <code>mset(x y tile_id)</code>
                                                                                             <br>
-                                                                                            This function allows you to
-                                                                                            set a
-                                                                                            continuous block of any part
-                                                                                            of
-                                                                                            TIC's RAM to the same value.
-                                                                                            <br>
-                                                                                            The address is specified in
-                                                                                            hexadecimal format, the
-                                                                                            value
-                                                                                            in
-                                                                                            decimal.
+                                                                                            This function will change the tile at the specified map coordinates.
+																							By default, changes made are only kept while the current game is running.
+																							To make permanent changes to the map, see `sync()`.
                                                                                           </p>
                                                                                         </div>
                                                                                       </div>
